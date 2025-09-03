@@ -1,0 +1,13 @@
+  body {
+    display: flex;
+    justify-content: center;  /* center horizontally */
+    align-items: center;      /* center vertically */
+    height: 100vh;            /* full screen height */
+    background: #1c4f89;         /* dark background */
+  }
+
+  #tetris {
+    border: 1px dashed #fff;   /* white border */
+    background: #000;         /* board background */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* glowing effect */
+  }
