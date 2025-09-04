@@ -7,6 +7,14 @@ const sq=sqaureSize=20;
 const Vacant = "WHITE";
 let board = [];
 
+for(r = 0 ; r<Row;r++){
+board[r]=[];
+  for(c = 0 ; c < Col ;c++){
+    board[r][c]=Vacant;
+
+  }
+}
+
 const PIECES =[
   [Z ,"red"],
   [S,"green"],
@@ -32,9 +40,11 @@ function drawBoard(){
 
   for( c = 0 ; c < Col ; c++){
 
-    drawSquare(c,r,Vacant);
+    drawSquare(c,r,board[r][c]);
   }
 }
+
+
 }
 
 drawBoard();
@@ -83,7 +93,7 @@ if(!this.collision(0,1,this.activeTetromino))
   this.y++
   this.draw();
 }else{
-
+console.log("block");
 }
 
 
@@ -93,6 +103,9 @@ Piece.prototype.moveRight=function(){
   this.undraw();
   this.x++;
   this.draw();
+  }else{
+    console.log("block");
+
   }
  
 }
@@ -102,8 +115,10 @@ Piece.prototype.moveLeft=function(){
   this.undraw();
   this.x--;
   this.draw();
-  }
+  }else{
+    console.log("block");
 
+  }
 }
 
 Piece.prototype.rotate=function(){
@@ -114,6 +129,9 @@ Piece.prototype.rotate=function(){
   this.tetrominoNumber=(this.tetrominoNumber+1)%this.tetromino.length;
   this.activeTetromino=this.tetromino[this.tetrominoNumber];
   this.draw();
+  }else{
+    console.log("block");
+
   }
   
 }
@@ -134,21 +152,17 @@ function CONTROL(event) {
   }
 }
 
-
-
-
-
-
 let dropStart = Date.now();
 
 // lhodod
 Piece.prototype.collision=function(x,y,piece){
+
     for( r = 0 ; r < piece.length ; r++ ){
 
-  for( c = 0 ; c < piece.length ; c++){
+       for( c = 0 ; c < piece.length ; c++){
 // if the square is empty 
 // skip 
-      if(!piecec[r][c]){
+      if(!piece[r][c]){
         continue;
       }
       let newX = this.x + c + x;
