@@ -5,7 +5,7 @@ A classic Tetris game built with HTML Canvas and JavaScript, inspired by the inc
 ![Tetris Game](https://img.shields.io/badge/Game-Tetris-blue?style=for-the-badge&logo=javascript)
 
 
-[** Play nOW**](https://haytamraba.github.io/tetris-game/)
+[**Play nOW**](https://haytamraba.github.io/tetris-game/)
 
 
 ##  Built With
